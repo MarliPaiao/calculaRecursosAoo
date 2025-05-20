@@ -1,0 +1,1 @@
+ALTER TABLE buildingRequirements RENAME TO building_requirements;

@@ -1,13 +1,13 @@
 package br.com.solve4you.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,7 +25,7 @@ public class Building {
 
     @Getter
     @NotNull
-    @Size(max = 60)
+    @Size(min=2,max = 60)
     private String name;
 
     @NotNull
@@ -33,33 +33,45 @@ public class Building {
     private BuildingType buildingType;
 
     @Column(name = "qtdFood")
-    @Min(0)
+    @PositiveOrZero
     private long qtdFood;
 
     @Column(name = "qtdOil")
-    @Min(0)
+    @PositiveOrZero
     private long qtdOil;
 
     @Column(name = "qtdIron")
-    @Min(0)
+    @PositiveOrZero
     private long qtdIron;
 
     @Column(name = "qtdMinerals")
-    @Min(0)
+    @PositiveOrZero
     private long qtdMinerals;
 
     @Column(name = "qtdUranium")
-    @Min(0)
+    @PositiveOrZero
     private int qtdUranium;
 
+    @PositiveOrZero
     private String troopType;
 
+    @PositiveOrZero
     private long recruitingSpeed;
 
+    @PositiveOrZero
     private int woundedCapacity;
 
+    @PositiveOrZero
     private int healingSpeed;
 
+    @PositiveOrZero
     private int fleetLimitBonus;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "building_requirements",
+            joinColumns = @JoinColumn(name = "building_id"),
+            inverseJoinColumns = @JoinColumn(name = "requirements_id"))
+    @JsonIgnore
+    private List<Building> buildingRequirements;
 
 }
