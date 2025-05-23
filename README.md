@@ -3,7 +3,8 @@
 
 # Projeto Calculadora de Recursos de Edifícios
 
-Este projeto é uma API Spring Boot para calcular a diferença de recursos necessários para atualizar edifícios em um jogo. A API permite adicionar, atualizar, deletar e listar edifícios, além de calcular a diferença de recursos entre estágios de um edifício.
+Este projeto é uma API Spring Boot para calcular a diferença de recursos necessários para atualizar edifícios em um jogo.
+A API permite adicionar, atualizar, deletar e listar edifícios, além de calcular a diferença de recursos entre estágios de um edifício.
 
 ## Tecnologias Utilizadas
 -Java
