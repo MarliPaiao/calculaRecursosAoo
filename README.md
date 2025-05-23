@@ -1,16 +1,18 @@
 
 ```markdown
+
+![Static Badge](https://img.shields.io/badge/flyway-%23CC0200?style=for-the-badge&logo=flyway&logoColor=%23CC0200&logoSize=auto&labelColor=black)
+
+
 # Projeto Calculadora de Recursos de Edifícios
 
 Este projeto é uma API Spring Boot para calcular a diferença de recursos necessários para atualizar edifícios em um jogo. A API permite adicionar, atualizar, deletar e listar edifícios, além de calcular a diferença de recursos entre estágios de um edifício.
 
 ## Tecnologias Utilizadas
-
-- Java
-- Spring Boot
-- Maven
-- JPA (Hibernate)
-- MySql
+-Java
+-Spring (Spring Boot, Spring Web)
+-Flyway
+-MySql
 
 ## Estrutura do Projeto
 
